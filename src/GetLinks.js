@@ -25,9 +25,9 @@ function linkCards(data) {
       {data.map((element) => {
         return (
           <Link
-            key={element.Linktext}
-            Linktext={element.Linktext}
-            Link={element.Link}
+            key={element._id}
+            Linktext={element.WellbeingLinktext}
+            Link={element.WellbeingLink}
             ImageURL={
               element.ImageURL != ""
                 ? element.ImageURL
@@ -42,7 +42,7 @@ function linkCards(data) {
 }
 
 const loadLinks = () =>
-  fetch("https://goodricke-links-api.herokuapp.com/link")
+  fetch("https://goodricke-links-api.herokuapp.com/wellbeing/link")
     .then((res) => (res.ok ? res : Promise.reject(res)))
     .then((res) => res.json());
 
