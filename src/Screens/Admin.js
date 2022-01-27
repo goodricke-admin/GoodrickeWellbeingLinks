@@ -189,8 +189,8 @@ function Admin() {
     var auth = { Authorization: `Basic ${credentials}` };
     e.preventDefault();
     const form = new FormData();
-    form.append("Linktext", document.getElementById("LinkText").value);
-    form.append("Link", document.getElementById("LinkURL").value);
+    form.append("WellbeingLinktext", document.getElementById("LinkText").value);
+    form.append("WellbeingLink", document.getElementById("LinkURL").value);
     form.append("ImageURL", document.getElementById("ImageURL").value);
     form.append("alt", document.getElementById("ImageAlt").value);
 
@@ -202,8 +202,11 @@ function Admin() {
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
-        if (response.Linktext == document.getElementById("LinkText").value) {
-          console.log("Added " + response.Linktext);
+        if (
+          response.WellbeingLinktext ==
+          document.getElementById("LinkText").value
+        ) {
+          console.log("Added " + response.WellbeingLinktext);
           setstate(0);
           setlinksState(1);
           setlinksState(0);

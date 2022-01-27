@@ -74,7 +74,7 @@ function AdminLink({ Linktext, Link, ImageURL, alt, newLink }) {
       var credentials = btoa("USER:" + password);
       var auth = { Authorization: `Basic ${credentials}` };
       fetch(
-        "https://goodricke-links-api.herokuapp.com/wellbeing/link" +
+        "https://goodricke-links-api.herokuapp.com/wellbeing/link/" +
           encodeURIComponent(Linktext),
         {
           method: "DELETE",
@@ -84,7 +84,7 @@ function AdminLink({ Linktext, Link, ImageURL, alt, newLink }) {
         .then((response) => response.json())
         .then((response) => {
           console.log(response.message);
-          if (response.message == "Link deleted.") {
+          if (response.message == "WellbeingLink deleted.") {
             setstate(1);
           } else {
             setstate(2);
