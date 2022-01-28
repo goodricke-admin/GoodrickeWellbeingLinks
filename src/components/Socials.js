@@ -36,7 +36,7 @@ function Socials() {
         <FaFacebookF style={icon} id="FaFacebookF" />
       </a>
       <a
-        href="https://www.instagram.com/goodrickecollege/"
+        href="https://instagram.com/goodrickewellbeing/"
         target="_blank"
         rel="noreferrer"
         onMouseEnter={() => setIHover(true)}
